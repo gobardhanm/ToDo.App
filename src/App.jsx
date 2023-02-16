@@ -4,6 +4,7 @@ import EditTodoForm from './components/EditTodoForm';
 import TodoItem from './components/TodoItem';
 
 function App() {
+    // const [a, setA] = React.useState(true)
     const [todos, setTodos] = React.useState(
         JSON.parse(localStorage.getItem('todos')) || []
     );
@@ -67,7 +68,7 @@ function App() {
     }
 
     function handleEditFormSubmit(e) {
-        e.preventDefault();
+        e.preventDefault(); // will not refresh the page
 
         handleUpdateTodo(currentTodo.id, currentTodo);
     }
@@ -76,7 +77,7 @@ function App() {
         <div className="App">
             {isEditing ? (
                 <EditTodoForm
-                    currentTodo={currentTodo}
+                    currentTodo={currentTodo} // props
                     setIsEditing={setIsEditing}
                     handleEditFormSubmit={handleEditFormSubmit}
                     handleEditInputChange={handleEditInputChange}
